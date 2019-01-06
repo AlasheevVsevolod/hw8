@@ -16,7 +16,28 @@ namespace BL_8_Struct_Enum_Tuple_Generic
         /// </summary>
         public static void Lb8_P1_3()
         {
+			var newRectangle = new Rectangle2D(10, 20, 30, 40);
+			Console.WriteLine(newRectangle);
         }
+
+		struct Rectangle2D
+		{
+			int width;
+			int height;
+			Coordinate coord;
+
+			public Rectangle2D(int w, int h, int x, int y)
+			{
+				width = w;
+				height = h;
+				coord = new Coordinate(x, y);
+			}
+
+			public override string ToString()
+			{
+				return $"width:\t{width}\nheight:\t{height}\nx:\t{coord.x}\ny:\t{coord.y}\n";
+			}
+		}
 
 
         /// <summary>
