@@ -55,7 +55,8 @@ namespace BL_8_Struct_Enum_Tuple_Generic
             }
 
             Console.WriteLine($"{rectangleArray.Length - rectangleArray.Distinct().Count()} дупликатов\n");
-            //Посмотреть бы как оно всё внутри реализовано... :)
+            //Посмотреть бы как оно всё внутри реализовано, но перебирать 100 элементов руками
+            // проверки ради - лень:)
         }
 
 
