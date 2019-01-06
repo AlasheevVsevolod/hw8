@@ -54,7 +54,7 @@ namespace BL_8_Struct_Enum_Tuple_Generic
                 random.Next(10));
             }
 
-            Console.WriteLine($"{rectangleArray.Length - rectangleArray.Distinct().Count()} дупликатов");
+            Console.WriteLine($"{rectangleArray.Length - rectangleArray.Distinct().Count()} дупликатов\n");
             //Посмотреть бы как оно всё внутри реализовано... :)
         }
 
@@ -66,6 +66,48 @@ namespace BL_8_Struct_Enum_Tuple_Generic
         /// </summary>
         public static void Lb8_P3_3_Anonymous()
         {
+            var newSong = new Song()
+            {
+                name = "Никто вместо нас",
+                duration = 280,
+                artist = "Павел Пламенев",
+                album = "Крадущая сны",
+                albumYear = 2018
+            };
+
+            var (title, minutes, seconds, albumYear) = GetSongsData(newSong);
+
+            var anon = new
+            {
+                Title = title,
+                Minutes = minutes,
+                Seconds = seconds,
+                Year = albumYear
+            };
+            Console.WriteLine($"Название: {anon.Title}\n" +
+            $"Длительность: {anon.Minutes}м {anon.Seconds}с\n{anon.Year} год");
+            //Довольно странный пример придумал. Если делать всё по методичке, то как вернуть
+            //анонимный тип у которого имя появляется только после компиляции - без понятия
+        }
+
+        public static (string title, int minutes, int seconds, int albumYear) GetSongsData(Song tmpSong)
+        {
+            return 
+            (
+                tmpSong.name,
+                tmpSong.duration / 60,
+                tmpSong.duration % 60,
+                tmpSong.albumYear
+            );
+        }
+
+        public class Song
+        {
+            public string name;
+            public int duration;
+            public string artist;
+            public string album;
+            public int albumYear;
         }
     }
 }
