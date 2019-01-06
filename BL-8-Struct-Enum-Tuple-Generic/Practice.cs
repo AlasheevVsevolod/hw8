@@ -10,7 +10,6 @@ namespace BL_8_Struct_Enum_Tuple_Generic
     {
         public static Random random = new Random();
 
-
         /// <summary>
         /// BL8-P1/3. Cоздать структуру 2DRectangle, которая будет содержать ширину, высоту и координату.
         /// </summary>
@@ -46,7 +45,19 @@ namespace BL_8_Struct_Enum_Tuple_Generic
         /// </summary>
         public static void Lb8_P2_3()
         {
+            var rectangleArray = new Rectangle2D[100];
+            var tmpArr = new Rectangle2D[100];
+            for (int i = 0; i < rectangleArray.Length; i++)
+            {
+                int randSideSize = random.Next(10);
+                rectangleArray[i] = new Rectangle2D(randSideSize, randSideSize, random.Next(10),
+                random.Next(10));
+            }
+
+            Console.WriteLine($"{rectangleArray.Length - rectangleArray.Distinct().Count()} дупликатов");
+            //Посмотреть бы как оно всё внутри реализовано... :)
         }
+
 
         /// <summary>
         /// BL8-P3/3.Anonymous. Создать метод GetSongData, 

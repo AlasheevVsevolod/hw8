@@ -13,7 +13,7 @@ namespace BL_8_Struct_Enum_Tuple_Generic
 			Practice.Lb8_P1_3();
             Practice.Lb8_P2_3();
 
-            Lesson.EnumExample();
+            //Lesson.EnumExample();
 
             Console.ReadLine();
         }
